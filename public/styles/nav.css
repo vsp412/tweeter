@@ -1,0 +1,29 @@
+/* Styles for nav bar */
+
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056a1;
+  color: #ffffff;
+}
+
+#logo {
+  font-family: 'Bungee', cursive;
+}
+
+#navBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+}
+
+.fa {
+  color: red;
+}
+
+#rightSideOfNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
