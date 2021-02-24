@@ -2,9 +2,6 @@
 
 $(document).ready(function() {
  
-  
-  
-
     $("#tweet-text").on('keyup', () => {
 
     
@@ -19,4 +16,8 @@ $(document).ready(function() {
       
   
 
+});
+
+document.addEventListener("dblclick", (event) => {
+  console.log(event);
 });
