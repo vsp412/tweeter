@@ -20,14 +20,23 @@
     <!-- Header CSS -->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
+    <!-- Tweet Box CSS -->
+    <link rel="stylesheet" href="/styles/new_tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Tweet Box JS -->
+    <script src="/scripts/new_tweet.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
 
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -69,10 +78,14 @@
       <form action  = "/tweets"  method = "POST">
         <label class = "tweetLabel" for="tweet-text">What are you humming about?</label>
         <textarea name="text" class = "tweetText" id="tweet-text"></textarea>
+        
+       
+        
         <div>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
+
       </form>
     </section>
 
