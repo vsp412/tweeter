@@ -23,6 +23,9 @@
     <!-- Tweet Box CSS -->
     <link rel="stylesheet" href="/styles/new_tweet.css" type="text/css" />
 
+     <!-- Tweets CSS -->
+     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -56,7 +59,7 @@
       </div>
     </nav>
 
-    <header >
+    <header id = "mainHeader">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -65,7 +68,6 @@
 
         <h2>Your Name</h2>
       
-
       </div>
   </header>
 
@@ -87,6 +89,39 @@
         </div>
 
       </form>
+    </section>
+    <section class = "tweets-display">
+        <article class = "tweetArticle">
+
+            <header id = "tweetHeads">
+              <div id = "userImg">
+                <img src = "https://i.imgur.com/5fUVPRP.png"/>
+              </div>
+              <div id = "userName">
+                <span>Max</span>
+              </div>
+              <div id = "userString">
+                <span>@Max23</span>
+              </div>
+            </header>
+
+            <p id = "userTweetContent">
+              jajajajajaj
+            </p>
+            <hr class = "userContentDivider">
+
+            <footer id = "tweetFoots">
+              <div id = "userTweetTimeAgo">
+                  <span>20 days ago</span>
+              </div>
+
+              <div id = "userSocialActionSymbols">
+                  <span class = "userSocialIcons"><i class="fa fa-flag"></i></span>
+                  <span class = "userSocialIcons"><i class="fa fa-refresh"></i></span>
+                  <span class = "userSocialIcons"><i class="fa fa-heart"></i></span>
+              </div>
+            </footer>
+        </article>   
     </section>
 
   </main>
