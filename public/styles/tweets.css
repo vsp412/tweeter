@@ -1,14 +1,15 @@
 .tweets-display {
   padding: 1.5em 0 0 0;
 }
-
+#userString {
+  display: none;
+}
 .tweetArticle {
   border: 2px solid black;
   margin: 0 0 1.25em 0;
 }
 .tweetArticle:hover {
   border: 2px solid black;
-  padding: 0 10px 0 0;
   box-shadow: 5px 10px grey;
   margin: 0 0 1.25em 0;
 }
