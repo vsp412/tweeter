@@ -68,25 +68,29 @@ $(document).ready(function(){
 
   $("#tweetForm").submit((event) => {
     event.preventDefault();
-    const tweet = $("#tweetForm").serialize();
-    console.log(tweet);
-    const tweetPost = $.ajax({url: 'http://localhost:8080/tweets', 
-            method: 'POST', 
-            data: tweet });
-    
-            
-    tweetPost.done(() => {
-      console.log("ok");
-      $('.tweets-display').html('');
-      loadTweets();
-      $("#tweet-text").val('');
+    if ($("#tweet-text").val().trim() === '') {
+      alert("The input box is empty. Please put an input.");
+    } else if ($("#tweet-text").val().trim().length > 140) {
+      alert('Sorry, the tweet length exceeds 140 characters.');
+    } else {
+          const tweet = $("#tweetForm").serialize();
+          console.log(tweet);
+          const tweetPost = $.ajax({url: 'http://localhost:8080/tweets', 
+                  method: 'POST', 
+                  data: tweet });
+         
+          tweetPost.done(() => {
+            console.log("ok");
+            $('.tweets-display').html('');
+            loadTweets();
+            $("#tweet-text").val('');
 
-    });
+          });
 
-    tweetPost.fail(() => {
-      console.log("hahahah");
-    });
-
+          tweetPost.fail(() => {
+            console.log("hahahah");
+          });
+    }
 
   });
    
