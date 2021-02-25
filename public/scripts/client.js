@@ -34,8 +34,6 @@ $(document).ready(function(){
       "created_at": 151113959088
     }
 
-
-
   ];
   
   const renderTweets = function(tweets) {
@@ -74,7 +72,7 @@ $(document).ready(function(){
 
                   '<footer id = "tweetFoots">'+
                     '<div id = "userTweetTimeAgo">'+
-                        '<span>' + daysInteger + ' days ago</span>'+
+                        '<span>' + daysInteger + daysInteger === 1 ? 'day' : 'days' + ' ago</span>'+
                     '</div>'+
 
                     '<div id = "userSocialActionSymbols">'+
@@ -85,17 +83,27 @@ $(document).ready(function(){
 
                   '</footer>'+
                 '</article>'; 
+
+                          
   
     return $tweet;
   }
   
-  renderTweets(data);
+  const loadTweets = function() {
+    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    .then(function (tweets) {
+      console.log('Success: ', tweets);
+      renderTweets(tweets)
 
-  $(".tweetArticle").hover(() => {
-    $("#userString").css('display', 'block');
-  }, () => {
-    $("#userString").css('display', 'none');
-  });
+     
+    });
+  }
+
+  
+  loadTweets();
+  
+   
+  
 
   
 });
