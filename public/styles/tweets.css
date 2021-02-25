@@ -5,3 +5,47 @@
 .tweetArticle {
   border: 2px solid black;
 }
+
+.tweetArticle:hover {
+  border: 2px solid black;
+  padding: 10px;
+  box-shadow: 5px 10px grey;
+}
+
+#tweetHeads {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  align-items: center;
+}
+
+#userImgAndName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#userName {
+  padding: 0.5em;
+}
+#userTweetContent {
+  padding: 1em;
+}
+
+#userContentDivider {
+  width: 97%;
+  height: 2px;
+  background-color: black;
+}
+
+#tweetFoots {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  align-items: center;
+}
+
+#userSocialActionSymbols > span > .fa {
+  padding: 0 0 0 5px;
+  color: #545149;
+}
