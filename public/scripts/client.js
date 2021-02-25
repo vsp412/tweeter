@@ -42,27 +42,29 @@ $(document).ready(function(){
   
   const createTweetElement = function(tweet) {
   
+    var daysInMilisecs = new Date() - new Date(tweet.created_at);
+    var daysInteger = Math.ceil((daysInMilisecs)/(3600 * 24 * 1000))
     let $tweet = '<article class = "tweetArticle">'+
 
                 '<header id = "tweetHeads">'+
                   '<div id = "userImgAndName">'+
-                    '<img src = "https://i.imgur.com/5fUVPRP.png" id = "userImg" />'+
-                    '<span id = "userName">Max</span>'+
+                    '<img src = ' + tweet.user.avatars + ' id = "userImg" />'+
+                    '<span id = "userName">' + tweet.user.name + '</span>'+
                   '</div>'+
                 
                   '<div id = "userString">'+
-                    '<span>@Max23</span>'+
+                    '<span>' + tweet.user.handle + '</span>'+
                   '</div>'+
                 '</header>'+
 
                 '<p id = "userTweetContent">'+
-                  'jajajajajaj'+
+                   tweet.content.text + 
                 '</p>'+
                 '<hr id = "userContentDivider">'+
 
                 '<footer id = "tweetFoots">'+
                   '<div id = "userTweetTimeAgo">'+
-                      '<span>20 days ago</span>'+
+                      '<span>' + daysInteger + '</span>'+
                   '</div>'+
 
                   '<div id = "userSocialActionSymbols">'+
