@@ -30,13 +30,10 @@ $(document).ready(function(){
     let tweetContainer = $(".tweets-display");
     for (let tweet of tweets) {
       const singleTweet = createTweetElement(tweet);
-      $(".tweets-display").append(singleTweet);
+      tweetContainer.append(singleTweet);
       
-      
-      console.log(singleTweet);
   
-    } 
-    console.log("a");
+    }
   
   };
   
@@ -46,35 +43,35 @@ $(document).ready(function(){
     var daysInteger = Math.ceil((daysInMilisecs)/(3600 * 24 * 1000))
     let $tweet = '<article class = "tweetArticle">'+
 
-                '<header id = "tweetHeads">'+
-                  '<div id = "userImgAndName">'+
-                    '<img src = ' + tweet.user.avatars + ' id = "userImg" />'+
-                    '<span id = "userName">' + tweet.user.name + '</span>'+
-                  '</div>'+
-                
-                  '<div id = "userString">'+
-                    '<span>' + tweet.user.handle + '</span>'+
-                  '</div>'+
-                '</header>'+
+                  '<header id = "tweetHeads">'+
+                    '<div id = "userImgAndName">'+
+                      '<img src = ' + tweet.user.avatars + ' id = "userImg" />'+
+                      '<span id = "userName">' + tweet.user.name + '</span>'+
+                    '</div>'+
+                  
+                    '<div id = "userString">'+
+                      '<span>' + tweet.user.handle + '</span>'+
+                    '</div>'+
+                  '</header>'+
 
-                '<p id = "userTweetContent">'+
-                   tweet.content.text + 
-                '</p>'+
-                '<hr id = "userContentDivider">'+
+                  '<p id = "userTweetContent">'+
+                    tweet.content.text + 
+                  '</p>'+
+                  '<hr id = "userContentDivider">'+
 
-                '<footer id = "tweetFoots">'+
-                  '<div id = "userTweetTimeAgo">'+
-                      '<span>' + daysInteger + '</span>'+
-                  '</div>'+
+                  '<footer id = "tweetFoots">'+
+                    '<div id = "userTweetTimeAgo">'+
+                        '<span>' + daysInteger + ' days ago</span>'+
+                    '</div>'+
 
-                  '<div id = "userSocialActionSymbols">'+
-                      '<span class = "userSocialIcons"><i class="fa fa-flag"></i></span>'+
-                      '<span class = "userSocialIcons"><i class="fa fa-refresh"></i></span>'+
-                      '<span class = "userSocialIcons"><i class="fa fa-heart"></i></span>'+
-                  '</div>'+
+                    '<div id = "userSocialActionSymbols">'+
+                        '<span class = "userSocialIcons"><i class="fa fa-flag"></i></span>'+
+                        '<span class = "userSocialIcons"><i class="fa fa-refresh"></i></span>'+
+                        '<span class = "userSocialIcons"><i class="fa fa-heart"></i></span>'+
+                    '</div>'+
 
-                '</footer>'+
-               '</article>'; 
+                  '</footer>'+
+                '</article>'; 
   
     return $tweet;
   }
