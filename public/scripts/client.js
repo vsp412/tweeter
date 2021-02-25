@@ -79,7 +79,7 @@ $(document).ready(function(){
       console.log("ok");
       $('.tweets-display').html('');
       loadTweets();
-      $("#tweetForm").focus();
+      $("#tweet-text").val('');
 
     });
 
