@@ -1,25 +1,6 @@
 $(document).ready(function(){
 
-  $("#tweetForm").submit((event) => {
-    event.preventDefault();
-    const tweet = $("#tweetForm").serialize();
-    console.log(tweet);
-    const tweetPost = $.ajax({url: 'http://localhost:8080/tweets', 
-            method: 'POST', 
-            data: tweet });
-    
-            
-    tweetPost.done(() => {
-      console.log("ok");
-      
-    });
-
-    tweetPost.fail(() => {
-      console.log("hahahah");
-    });
-
-
-  });
+ 
 
   const renderTweets = function(tweets) {
   
@@ -74,12 +55,40 @@ $(document).ready(function(){
     $.ajax('http://localhost:8080/tweets', { method: 'GET' })
     .then(function (tweets) {
       console.log('Success: ', tweets);
+      tweets.sort((a, b) => {
+        return b.created_at - a.created_at;
+      });
       renderTweets(tweets)
 
     });
   }
 
   loadTweets();
+
+
+  $("#tweetForm").submit((event) => {
+    event.preventDefault();
+    const tweet = $("#tweetForm").serialize();
+    console.log(tweet);
+    const tweetPost = $.ajax({url: 'http://localhost:8080/tweets', 
+            method: 'POST', 
+            data: tweet });
+    
+            
+    tweetPost.done(() => {
+      console.log("ok");
+      $('.tweets-display').html('');
+      loadTweets();
+      $("#tweetForm").focus();
+
+    });
+
+    tweetPost.fail(() => {
+      console.log("hahahah");
+    });
+
+
+  });
    
 });
 
