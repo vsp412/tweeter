@@ -1,41 +1,26 @@
 $(document).ready(function(){
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "opal",
-        "avatars": "https://i.imgur.com/v0JXau2.png",
-        "handle": "@rdjjjj" },
-      "content": {
-        "text": "jijiii"
-      },
-      "created_at": 151113959088
-    }
+  $("#tweetForm").submit((event) => {
+    event.preventDefault();
+    const tweet = $("#tweetForm").serialize();
+    console.log(tweet);
+    const tweetPost = $.ajax({url: 'http://localhost:8080/tweets', 
+            method: 'POST', 
+            data: tweet });
+    
+            
+    tweetPost.done(() => {
+      console.log("ok");
+      
+    });
 
-  ];
-  
+    tweetPost.fail(() => {
+      console.log("hahahah");
+    });
+
+
+  });
+
   const renderTweets = function(tweets) {
   
     let tweetContainer = $(".tweets-display");
@@ -43,9 +28,7 @@ $(document).ready(function(){
       const singleTweet = createTweetElement(tweet);
       tweetContainer.append(singleTweet);
       
-  
     }
-  
   };
   
   const createTweetElement = function(tweet) {
@@ -72,7 +55,7 @@ $(document).ready(function(){
 
                   '<footer id = "tweetFoots">'+
                     '<div id = "userTweetTimeAgo">'+
-                        '<span>' + daysInteger + daysInteger === 1 ? 'day' : 'days' + ' ago</span>'+
+                        '<span>' + daysInteger + (daysInteger === 1 ? ' day' : ' days') + ' ago</span>'+
                     '</div>'+
 
                     '<div id = "userSocialActionSymbols">'+
@@ -84,8 +67,6 @@ $(document).ready(function(){
                   '</footer>'+
                 '</article>'; 
 
-                          
-  
     return $tweet;
   }
   
@@ -95,17 +76,11 @@ $(document).ready(function(){
       console.log('Success: ', tweets);
       renderTweets(tweets)
 
-     
     });
   }
 
-  
   loadTweets();
-  
    
-  
-
-  
 });
 
 
