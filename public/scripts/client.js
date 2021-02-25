@@ -22,7 +22,20 @@ $(document).ready(function(){
         "text": "Je pense , donc je suis"
       },
       "created_at": 1461113959088
+    },
+    {
+      "user": {
+        "name": "opal",
+        "avatars": "https://i.imgur.com/v0JXau2.png",
+        "handle": "@rdjjjj" },
+      "content": {
+        "text": "jijiii"
+      },
+      "created_at": 151113959088
     }
+
+
+
   ];
   
   const renderTweets = function(tweets) {
