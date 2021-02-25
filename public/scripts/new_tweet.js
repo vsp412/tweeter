@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     
       let maxLen = $("#tweet-text").attr("maxLength");
-      let charCount = $("#tweet-text").val().length;
+      let charCount = $("#tweet-text").val().trim().length;
       let displayCount = maxLen - charCount;
       $("output").text(displayCount);
 
