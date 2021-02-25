@@ -11,7 +11,12 @@ $(document).ready(function(){
       
     }
   };
-  
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const createTweetElement = function(tweet) {
   
     var daysInMilisecs = new Date() - new Date(tweet.created_at);
@@ -30,7 +35,7 @@ $(document).ready(function(){
                   '</header>'+
 
                   '<p id = "userTweetContent">'+
-                    tweet.content.text + 
+                    escape(tweet.content.text) + 
                   '</p>'+
                   '<hr id = "userContentDivider">'+
 
