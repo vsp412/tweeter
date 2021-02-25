@@ -75,8 +75,10 @@ $(document).ready(function(){
     event.preventDefault();
     if ($("#tweet-text").val().trim() === '') {
       alert("The input box is empty. Please put an input.");
+
     } else if ($("#tweet-text").val().trim().length > 140) {
       alert('Sorry, the tweet length exceeds 140 characters.');
+      
     } else {
           const tweet = $("#tweetForm").serialize();
           console.log(tweet);
@@ -85,6 +87,7 @@ $(document).ready(function(){
                   data: tweet });
          
           tweetPost.done(() => {
+
             console.log("ok");
             $('.tweets-display').html('');
             loadTweets();
@@ -93,7 +96,7 @@ $(document).ready(function(){
           });
 
           tweetPost.fail(() => {
-            console.log("hahahah");
+            console.log("Error");
           });
     }
 
