@@ -90,6 +90,13 @@ $(document).ready(function(){
   }
   
   renderTweets(data);
+
+  $(".tweetArticle").hover(() => {
+    $("#userString").css('display', 'block');
+  }, () => {
+    $("#userString").css('display', 'none');
+  });
+
   
 });
 
