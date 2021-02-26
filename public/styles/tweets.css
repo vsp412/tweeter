@@ -6,12 +6,25 @@
   border: 2px solid black;
   margin: 0 0 1.25em 0;
 }
+
 .tweetArticle:hover {
   border: 2px solid black;
   box-shadow: 5px 10px grey;
   margin: 0 0 1.25em 0;
 }
 
+.userSocialActionSymbols {
+  display: block;
+}
+
+.tweetArticle:hover .userSocialActionSymbols {
+  display: none;
+}
+
+.fa {
+  padding: 0 0 0 10px;
+  color: #545149;
+}
 #tweetHeads {
   display: flex;
   justify-content: space-between;
@@ -43,9 +56,4 @@
   justify-content: space-between;
   padding: 1em;
   align-items: center;
-}
-
-.fa {
-  padding: 0 0 0 10px;
-  color: #545149;
 }

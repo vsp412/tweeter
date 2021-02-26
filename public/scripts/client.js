@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
- 
 
   const renderTweets = function(tweets) {
   
@@ -44,7 +43,7 @@ $(document).ready(function(){
                         '<span>' + daysInteger + (daysInteger === 1 ? ' day' : ' days') + ' ago</span>'+
                     '</div>'+
 
-                    '<div id = "userSocialActionSymbols">'+
+                    '<div class = "userSocialActionSymbols">'+
                         '<span class = "userSocialIcons"><i class="fa fa-flag"></i></span>'+
                         '<span class = "userSocialIcons"><i class="fa fa-refresh"></i></span>'+
                         '<span class = "userSocialIcons"><i class="fa fa-heart"></i></span>'+
@@ -75,10 +74,10 @@ $(document).ready(function(){
     event.preventDefault();
     if ($("#tweet-text").val().trim() === '') {
       alert("The input box is empty. Please put an input.");
-
+      
     } else if ($("#tweet-text").val().trim().length > 140) {
       alert('Sorry, the tweet length exceeds 140 characters.');
-      
+
     } else {
           const tweet = $("#tweetForm").serialize();
           console.log(tweet);
@@ -103,36 +102,3 @@ $(document).ready(function(){
   });
    
 });
-
-
-// let $tweet = '<article class = "tweetArticle">'+
-
-//                 '<header id = "tweetHeads">'+
-//                   '<div id = "userImgAndName">'+
-//                     '<img src = "https://i.imgur.com/5fUVPRP.png" id = "userImg" />'+
-//                     '<span id = "userName">Max</span>'+
-//                   '</div>'+
-                
-//                   '<div id = "userString">'+
-//                     '<span>@Max23</span>'+
-//                   '</div>'+
-//                 '</header>'+
-
-//                 '<p id = "userTweetContent">'+
-//                   'jajajajajaj'+
-//                 '</p>'+
-//                 '<hr id = "userContentDivider">'+
-
-//                 '<footer id = "tweetFoots">'+
-//                   '<div id = "userTweetTimeAgo">'+
-//                       '<span>20 days ago</span>'+
-//                   '</div>'+
-
-//                   '<div id = "userSocialActionSymbols">'+
-//                       '<span class = "userSocialIcons"><i class="fa fa-flag"></i></span>'+
-//                       '<span class = "userSocialIcons"><i class="fa fa-refresh"></i></span>'+
-//                       '<span class = "userSocialIcons"><i class="fa fa-heart"></i></span>'+
-//                   '</div>'+
-
-//                 '</footer>'+
-//                '</article>';   

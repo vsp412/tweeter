@@ -12,8 +12,7 @@ $(document).ready(function() {
 
     });
 
+    
+
 });
 
-document.addEventListener("dblclick", (event) => {
-  console.log(event);
-});
