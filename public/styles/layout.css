@@ -36,3 +36,10 @@ body {
 .container {
   width: 90%;
 }
+
+#errorTweet1 {
+  display: none;
+}
+#errorTweet2 {
+  display: none;
+}

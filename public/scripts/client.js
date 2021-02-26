@@ -73,17 +73,20 @@ $(document).ready(function(){
   $("#tweetForm").submit((event) => {
     event.preventDefault();
     if ($("#tweet-text").val().trim() === '') {
-    //  $("#errorTweet").html('<i class = "fa fa-times-circle"></i>The input box is empty. No blank tweets allowed.')
+    
     $("#errorTweet1").slideDown();
+    $("#errorTweet2").slideUp();
       
       
     } else if ($("#tweet-text").val().trim().length > 140) {
-    //  $("#errorTweet").html('<i class = "fa fa-times-circle"></i>Please fit your tweet within 140 characters.')
+   
     $("#errorTweet2").slideDown();
+    $("#errorTweet1").slideUp();
 
 
     } else {
       $("#errorTweet2").slideUp();
+      $("#errorTweet1").slideUp();
           const tweet = $("#tweetForm").serialize();
           console.log(tweet);
           const tweetPost = $.ajax({url: 'http://localhost:8080/tweets', 
