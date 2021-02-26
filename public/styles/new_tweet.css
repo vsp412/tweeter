@@ -16,10 +16,7 @@ form {
 label {
   position: absolute;
   font-size: 16px;
- 
 }
-
-
 
 form > div {
   display: flex;

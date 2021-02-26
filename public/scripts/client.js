@@ -77,12 +77,14 @@ $(document).ready(function(){
     $("#errorTweet1").slideDown();
     $("#errorTweet2").slideUp();
       
+
       
     } else if ($("#tweet-text").val().trim().length > 140) {
    
     $("#errorTweet2").slideDown();
     $("#errorTweet1").slideUp();
 
+    
 
     } else {
       $("#errorTweet2").slideUp();
