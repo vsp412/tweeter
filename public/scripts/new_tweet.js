@@ -9,6 +9,7 @@ $(document).ready(function() {
       let charCount = $("#tweet-text").val().trim().length;
       let displayCount = maxLen - charCount;
       $("output").text(displayCount);
+      
       if (displayCount < 0) {
         console.log(displayCount);
         $("output").css({'color':'red'})
