@@ -84,7 +84,7 @@ $(document).ready(function(){
     $("#errorTweet2").slideDown();
     $("#errorTweet1").slideUp();
 
-    
+
 
     } else {
       $("#errorTweet2").slideUp();
@@ -101,6 +101,7 @@ $(document).ready(function(){
             $('.tweets-display').html('');
             loadTweets();
             $("#tweet-text").val('');
+            $("output").val('');
 
           });
 

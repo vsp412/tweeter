@@ -12,12 +12,11 @@ $(document).ready(function() {
       
       if (displayCount < 0) {
         console.log(displayCount);
-        $("output").css({'color':'red'})
+        $("output").css({'color':'red'});
       } else {
-        $("output").css({'color':'#545149'})
+        $("output").css({'color':'#545149'});
       }
        
-
     });
 
     
