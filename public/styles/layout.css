@@ -43,3 +43,12 @@ body {
 #errorTweet2 {
   display: none;
 }
+#errorTweet1 .fa {
+  color: red;
+  padding: 0 10px 0 0;
+}
+
+#errorTweet2 .fa {
+  color: red;
+  padding: 0 10px 0 0;
+}
