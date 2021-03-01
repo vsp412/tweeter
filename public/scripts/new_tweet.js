@@ -6,9 +6,11 @@ $(document).ready(function() {
 
     
       const maxLen = 140;
-      let charCount = $("#tweet-text").val().trim().length;
+      let charCount = $("#tweet-text").val().length;
       let displayCount = maxLen - charCount;
-      $("output").text(displayCount);
+      
+
+      
       
       if (displayCount < 0) {
         console.log(displayCount);
@@ -16,7 +18,16 @@ $(document).ready(function() {
       } else {
         $("output").css({'color':'#545149'});
       }
-       
+
+      if (displayCount % 5 === 0) {
+        console.log($("#tweet-text").val());
+        $("#tweet-text").append('<br>');
+      }
+
+
+
+      $("output").text(displayCount);
+        
     });
 
     

@@ -101,7 +101,7 @@ $(document).ready(function(){
             $('.tweets-display').html('');
             loadTweets();
             $("#tweet-text").val('');
-            $("output").val('');
+            $("output").val('140');
 
           });
 
