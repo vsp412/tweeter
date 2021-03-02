@@ -22,8 +22,32 @@ nav {
   padding: 1.5em;
 }
 
-.fa {
+#bounceArrow {
   color: red;
+}
+
+#rightSideOfNav:hover #bounceArrow {
+  color: red;
+  animation: moveDown 1s ease-in-out;
+  animation-delay: 10ms;
+}
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(25px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 #rightSideOfNav {
@@ -31,4 +55,8 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#rightSideOfNav:hover {
+  cursor: pointer;
 }

@@ -1,3 +1,7 @@
+.new-tweet {
+  display: none;
+}
+
 #tweet-text {
   width: 100%;
   border: 0;
