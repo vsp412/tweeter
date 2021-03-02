@@ -17,7 +17,8 @@ $(document).ready(function(){
   }
 
   const createTweetElement = function(tweet) {
-  
+    console.log("kala");
+    console.log(tweet);
     var daysInMilisecs = new Date() - new Date(tweet.created_at);
     var daysInteger = Math.ceil((daysInMilisecs)/(3600 * 24 * 1000))
     let $tweet = '<article class = "tweetArticle">'+
@@ -56,7 +57,7 @@ $(document).ready(function(){
   }
   
   const loadTweets = function() {
-    $.ajax('http://localhost:8080/tweets', { method: 'GET' })
+    $.ajax('/tweets', { method: 'GET' })
     .then(function (tweets) {
       console.log('Success: ', tweets);
       tweets.sort((a, b) => {
@@ -68,6 +69,16 @@ $(document).ready(function(){
   }
 
   loadTweets();
+
+  const loadLatestTweet = function() {
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (tweets) {
+      console.log("golecha");
+      console.log(tweets[tweets.length - 1]);
+      const singleTweet = createTweetElement(tweets[tweets.length - 1]);
+      $('.tweets-display').prepend(singleTweet);
+    });
+  }
 
 
   $("#tweetForm").submit((event) => {
@@ -91,15 +102,18 @@ $(document).ready(function(){
       $("#errorTweet1").slideUp();
           const tweet = $("#tweetForm").serialize();
           console.log(tweet);
-          const tweetPost = $.ajax({url: 'http://localhost:8080/tweets', 
+          const tweetPost = $.ajax({url: '/tweets', 
                   method: 'POST', 
                   data: tweet });
          
           tweetPost.done(() => {
-
+     
             console.log("ok");
-            $('.tweets-display').html('');
-            loadTweets();
+            loadLatestTweet();
+            // const singleTweet = createTweetElement(tweet);
+            // $('.tweets-display').append(singleTweet);
+            // $('.tweets-display').html('');
+            // loadTweets();
             $("#tweet-text").val('');
             $("output").val('140');
 

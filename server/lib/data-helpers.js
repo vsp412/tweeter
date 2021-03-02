@@ -19,7 +19,7 @@ module.exports = function makeDataHelpers(db) {
     getTweets: function(callback) {
       simulateDelay(() => {
         const sortNewestFirst = (a, b) => a.created_at - b.created_at;
-        callback(null, db.tweets.sort(sortNewestFirst));
+        callback(null, db.tweets.sort(sortNewestFirst));e
       });
     }
 
