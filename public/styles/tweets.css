@@ -14,11 +14,11 @@
 }
 
 .userSocialActionSymbols {
-  display: block;
+  display: none;
 }
 
 .tweetArticle:hover .userSocialActionSymbols {
-  display: none;
+  display: block;
 }
 
 .tweetArticle .fa {
