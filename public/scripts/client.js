@@ -1,6 +1,23 @@
 $(document).ready(function () {
 
 
+  $("#upScroll").hide();
+  $(window).scroll(() => {
+    if ($(window).scrollTop() > 0) {
+      $("#upScroll").show();
+    } else {
+      $("#upScroll").hide();
+    }
+  }); 
+    
+  $("#upScroll").on('click', () => {
+    $("html").animate({
+      scrollTop: 0
+    });
+
+  });
+
+
   $("#rightSideOfNav").on('click', () => {
     $(".new-tweet").slideToggle(1000);
   });
@@ -11,9 +28,9 @@ $(document).ready(function () {
     for (let tweet of tweets) {
       const singleTweet = createTweetElement(tweet);
       tweetContainer.append(singleTweet);
-
     }
   };
+
   const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
@@ -21,8 +38,6 @@ $(document).ready(function () {
   }
 
   const createTweetElement = function (tweet) {
-    console.log("kala");
-    console.log(tweet);
     var daysInMilisecs = new Date() - new Date(tweet.created_at);
     var daysInteger = Math.ceil((daysInMilisecs) / (3600 * 24 * 1000))
     let $tweet = '<article class = "tweetArticle">' +
@@ -63,7 +78,6 @@ $(document).ready(function () {
   const loadTweets = function () {
     $.ajax('/tweets', { method: 'GET' })
       .then(function (tweets) {
-        console.log('Success: ', tweets);
         tweets.sort((a, b) => {
           return b.created_at - a.created_at;
         });
@@ -77,8 +91,6 @@ $(document).ready(function () {
   const loadLatestTweet = function () {
     $.ajax('/tweets', { method: 'GET' })
       .then(function (tweets) {
-        console.log("golecha");
-        console.log(tweets[tweets.length - 1]);
         const singleTweet = createTweetElement(tweets[tweets.length - 1]);
         $('.tweets-display').prepend(singleTweet);
       });
