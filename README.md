@@ -4,9 +4,8 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Final Product
 
-!["All the tweets"](https://github.com/vsp412/tinyapp/blob/master/docs/login_page.png)
-!["When exceeding character limit"](https://github.com/vsp412/tinyapp/blob/master/docs/registration_page.png)
-modify_long_url_page.png)
+!["All the tweets"](https://github.com/vsp412/tweeter/blob/master/docs/general_ui.png)
+!["When exceeding character limit"](https://github.com/vsp412/tweeter/blob/master/docs/exceed_limit.png)
 
 ## Getting Started
 
