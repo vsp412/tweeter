@@ -1,29 +1,9 @@
+
+
 $(document).ready(function () {
 
-
-  $("#upScroll").hide();
-  $(window).scroll(() => {
-    if ($(window).scrollTop() > 0) {
-      $("#upScroll").show();
-    } else {
-      $("#upScroll").hide();
-    }
-  }); 
-    
-  $("#upScroll").on('click', () => {
-    $("html").animate({
-      scrollTop: 0
-    });
-
-  });
-
-
-  $("#rightSideOfNav").on('click', () => {
-    $(".new-tweet").slideToggle(1000);
-  });
-
+  //function to load up tweets in the display area from data storage
   const renderTweets = function (tweets) {
-
     let tweetContainer = $(".tweets-display");
     for (let tweet of tweets) {
       const singleTweet = createTweetElement(tweet);
@@ -31,15 +11,19 @@ $(document).ready(function () {
     }
   };
 
+  //Function written in order to escape special characters, and interpret them purely as text, rather than part of a programming script. Implemented to prevent against SQL injection attacks.
   const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
+  //creates one tweet, and renders it on the screen. accepts raw data as input and plugs it into the tweet body.
   const createTweetElement = function (tweet) {
     var daysInMilisecs = new Date() - new Date(tweet.created_at);
     var daysInteger = Math.ceil((daysInMilisecs) / (3600 * 24 * 1000))
+
+
     let $tweet = '<article class = "tweetArticle">' +
 
       '<header id = "tweetHeads">' +
@@ -117,7 +101,6 @@ $(document).ready(function () {
       $("#errorTweet2").slideUp();
       $("#errorTweet1").slideUp();
       const tweet = $("#tweetForm").serialize();
-      console.log(tweet);
       const tweetPost = $.ajax({
         url: '/tweets',
         method: 'POST',
@@ -126,7 +109,7 @@ $(document).ready(function () {
 
       tweetPost.done(() => {
 
-        console.log("ok");
+       
         loadLatestTweet();
         // const singleTweet = createTweetElement(tweet);
         // $('.tweets-display').append(singleTweet);
@@ -138,7 +121,7 @@ $(document).ready(function () {
       });
 
       tweetPost.fail(() => {
-        console.log("Error");
+        
       });
     }
 
