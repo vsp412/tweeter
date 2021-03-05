@@ -2,36 +2,43 @@
   padding: 1.5em 0 0 0;
 }
 
+/* each tweet given a border for aesthetic purposes */
 .tweetArticle {
   border: 2px solid black;
   margin: 0 0 1.25em 0;
 }
 
+/* on hover, a box shadow appears around each tweet */
 .tweetArticle:hover {
   border: 2px solid black;
   box-shadow: 5px 10px grey;
   margin: 0 0 1.25em 0;
 }
 
+/* no action symbols displayed initially */
 .userSocialActionSymbols {
   display: none;
 }
 
+/* but on hover over a tweet, they appear */
 .tweetArticle:hover .userSocialActionSymbols {
   display: block;
 }
 
+/* fontawesome icons styled appropriately */
 .tweetArticle .fa {
   padding: 0 0 0 10px;
   color: #545149;
 }
+
+/* tweet header styled elegantly */
 #tweetHeads {
   display: flex;
   justify-content: space-between;
   padding: 1em;
   align-items: center;
 }
-
+/* users image and name section styled elegantly */
 #userImgAndName {
   display: flex;
   justify-content: space-between;
@@ -51,6 +58,7 @@
   background-color: black;
 }
 
+/* tweet footer styled elegantly */
 #tweetFoots {
   display: flex;
   justify-content: space-between;

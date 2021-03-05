@@ -27,9 +27,9 @@ label {
 
 /* designed to be properly and elegantly positioned. used css flexbox */
 form > div {
+  padding: 0.5em 0 0 0;
   display: flex;
   justify-content: space-between;
-  padding: 0.5em 0 0 0;
 }
 
 /* used a custom font */

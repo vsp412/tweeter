@@ -7,9 +7,7 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+/* Global layout stuff */
 
 /* defined a specific color for body */
 body {
@@ -18,6 +16,7 @@ body {
   font-size: 24px;
 }
 
+/* used css flexbox for properly aligning */
 body {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
@@ -25,10 +24,12 @@ body {
   align-items: center;
 }
 
+/* defined container width  */
 .container {
   width: 90%;
 }
 
+/* initially hiding error messages, displayed once error pops up */
 #errorTweet1 {
   display: none;
 }
@@ -45,6 +46,7 @@ body {
   padding: 0 10px 0 0;
 }
 
+/* styled the upscroll circular red button/icon in pure css. displayed via javascript when page scroll event occurs */
 #upScroll {
   position: fixed;
   top: 90%;

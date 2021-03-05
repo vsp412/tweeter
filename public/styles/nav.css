@@ -1,5 +1,4 @@
-/* Styles for nav bar */
-
+/* Styles for nav bar. superimpose it over other elements when page scroll down.  */
 nav {
   height: 120px;
   width: 100%;
@@ -15,22 +14,26 @@ nav {
   font-family: 'Bungee', cursive;
 }
 
+/* used css flexbox for alignment  */
 #navBar {
   display: flex;
   justify-content: space-between;
   padding: 1.5em;
 }
 
+/* created the bouncing down arrow */
 #bounceArrow {
   color: red;
 }
 
+/* created the animation effect for the bouncing arrow, on hover */
 #rightSideOfNav:hover #bounceArrow {
   color: red;
   animation: moveDown 1s ease-in-out;
   animation-delay: 10ms;
 }
 
+/* arrow jumps up and down by 25px, part of the animation effect */
 @keyframes moveDown {
   0% {
     transform: translateY(0px);
@@ -49,6 +52,7 @@ nav {
   }
 }
 
+/* used css flexbox for alignment */
 #rightSideOfNav {
   display: flex;
   flex-direction: column;
