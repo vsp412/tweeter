@@ -1,7 +1,9 @@
+/* tweet input section remains hidden till the button on top right side of nav bar is clicked */
 .new-tweet {
   display: none;
 }
 
+/* tweet textarea is designed to look sleek and similar to Google's Material Design conventions */
 #tweet-text {
   width: 100%;
   border: 0;
@@ -17,23 +19,27 @@ form {
   padding: 0 8px;
 }
 
+/* styled such that it does not overlap with the text */
 label {
   position: absolute;
   font-size: 16px;
 }
 
+/* designed to be properly and elegantly positioned. used css flexbox */
 form > div {
   display: flex;
   justify-content: space-between;
   padding: 0.5em 0 0 0;
 }
 
+/* used a custom font */
 form > div > button {
   background-color: #4056a1;
   color: #ffffff;
   font-family: 'Bungee', cursive;
 }
 
+/* used a custom font here as well */
 form > div > output {
   font-family: 'Bungee', cursive;
 }
