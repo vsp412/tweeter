@@ -1,6 +1,6 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Hi viewer! Tweeter is a beautiful single-page application which is a clone of Twitter in terms of functionality
 
 ## Final Product
 
